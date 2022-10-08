@@ -1,0 +1,24 @@
+#Drop a .txt file in the same folder, run the python code from the environment
+
+import os
+
+def alphabetizer(words, separator):
+    return list(filter(bool, sorted(map(lambda x: x, words.split(separator)))))
+
+def wordConnector(words):
+    return "\n".join(words)
+
+try:
+    txtFile = input(".txt File pls =3\n")
+    with open(txtFile, 'r') as file:
+        txtFileObj = file.read()
+
+except FileNotFoundError:
+    print("File doesn\'t exist\nMake sure the file is in the same folder\n(Ex: stuff.txt)\n")
+else:
+    separation = "\n"
+    alphabetizedWords = wordConnector(alphabetizer(txtFileObj, separation))
+
+with open(f"Abc_{txtFile}", "w+") as txtFileNew:
+    txtFileNew.write(f"{alphabetizedWords.lower()}")
+#print (txtFileObj)
