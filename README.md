@@ -1,5 +1,5 @@
 # HappyPass
-Simple password generator via .txt files
+Simple password generator script via .txt files
 
 The Alphabetizer only for readability - it's not essential
 
